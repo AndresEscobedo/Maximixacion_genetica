@@ -16,9 +16,33 @@ void MaximizacionGenetica::algoritmo_genetico(int cantidad_actual, double probab
 	int cantidad_generaciones = 0;
 
 	genera_poblacion_inicial(adaptacion);
+	while (true)
+	{
+		funcion_de_adaptacion(cantidad_actual, adaptacion);
+		probabilidades_acumuladas(adaptacion, cantidad_actual);
+		crea_nueva_generacion(cantidad_actual, mascara_cruce, cantidad_para_cruce);
+		mutacion(cantidad_actual, probabilidad_mutar, cantidad_mutaciones);
+		remplazo_simple(cantidad_actual);
+		//remplazo_elitista(cantidad_actual);
+		cantidad_generaciones++;
+		if (cantidad_generaciones == max_generaciones)
+			break;
+	}
 }
 
-void MaximizacionGenetica::genera_poblacion_inicial(int* adaptacion)
+void MaximizacionGenetica::genera_poblacion_inicial(int cantidad_sujetos, int longitud_del_gen)
 {
+	srand(time(NULL));
+	double r = (double)rand() / RAND_MAX;
 
+	for (int i = 0; i < cantidad_sujetos; i++)
+	{
+		poblacion[i] = "";
+		for (int j = 1; j <= longitud_del_gen; j++)
+			if (r.NextDouble() < 0.5)
+				poblacion[i] += "1";
+			else
+				poblacion[i] += "0";
+
+	}
 }
