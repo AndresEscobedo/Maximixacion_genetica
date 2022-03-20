@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <stdlib.h>
+#include <time.h> 
 
 using namespace std;
 
@@ -28,7 +30,7 @@ private:
 	void funcion_de_adaptacion(int cantidad_sujetos, int* adaptacion);
 	int	 Bin2Dec(string Cad);
 	string Dec2Bin(int iNUm);
-	void genera_poblacion_inicial(int* adaptacion);
+	void genera_poblacion_inicial(int cantidad_sujetos, int longitud_del_gen);
 	void cruza_padres(string mascara_cruce, string padre1, string padre2, string& hijo1, string& hijo2);
 	void muta_hijo(double probabilidad, int cuantas_mutaciones, string& hijo);
 
