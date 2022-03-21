@@ -19,11 +19,11 @@ void MaximizacionGenetica::algoritmo_genetico(int cantidad_actual, double probab
 	while (true)
 	{
 		funcion_de_adaptacion(cantidad_actual, longitud_gen, adaptacion);
-		probabilidades_acumuladas(adaptacion, cantidad_actual);
-		crea_nueva_generacion(cantidad_actual, mascara_cruce, cantidad_para_cruce);
-		mutacion(cantidad_actual, probabilidad_mutar, cantidad_mutaciones);
-		remplazo_simple(cantidad_actual);
-		remplazo_elitista(cantidad_actual);
+		//probabilidades_acumuladas(adaptacion, cantidad_actual);
+		//crea_nueva_generacion(cantidad_actual, mascara_cruce, cantidad_para_cruce);
+		//mutacion(cantidad_actual, probabilidad_mutar, cantidad_mutaciones);
+		//remplazo_simple(cantidad_actual);
+		//remplazo_elitista(cantidad_actual);
 		cantidad_generaciones++;
 		if (cantidad_generaciones == max_generaciones)
 			break;
