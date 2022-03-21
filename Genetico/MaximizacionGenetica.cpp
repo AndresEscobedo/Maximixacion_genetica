@@ -81,3 +81,14 @@ void MaximizacionGenetica::genera_poblacion_inicial(int cantidad_sujetos, int lo
 		}
 	}
 }
+
+void MaximizacionGenetica::probabilidades_acumuladas(int* adaptacion, int cantidad_sujetos)
+{
+	double suma = 0.0;
+	for (int i = 0; i < cantidad_sujetos; i++)
+		suma += adaptacion[i];
+	probabilidad_acumulada[0] = adaptacion[0] / suma;
+	for (int i = 1; i < cantidad_sujetos; i++)
+		probabilidad_acumulada[i] = probabilidad_acumulada[i - 1] + adaptacion[i] / suma;
+
+}
