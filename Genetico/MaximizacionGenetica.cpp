@@ -13,7 +13,7 @@ void MaximizacionGenetica::algoritmo_genetico(int cantidad_actual, double probab
     int adaptacion[MAX_SUJETOS] = { 0 };
     int cantidad_para_cruce = cantidad_actual / 2;
     int cantidad_generaciones = 0;
-
+    longitud_gen *= 3;
     genera_poblacion_inicial(cantidad_actual, longitud_gen);
     while (true)
     {
